@@ -63,3 +63,21 @@ pub fn map<T>() -> ArenaMap<T> {
 pub fn set() -> KeySet {
     KeySet::default()
 }
+
+#[cfg(feature = "nohash")]
+trait HasNew {
+    fn new() -> Self;
+}
+
+#[cfg(feature = "nohash")]
+impl HasNew for KeySet {
+    fn new() -> Self {
+        KeySet::default()
+    }
+}
+#[cfg(feature = "nohash")]
+impl <T> HasNew for ArenaMap<T> {
+    fn new() -> Self {
+        ArenaMap::default()
+    }
+}
