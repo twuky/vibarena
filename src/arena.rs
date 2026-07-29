@@ -1,7 +1,6 @@
 use core::iter::Zip;
 use core::ops::{Index, IndexMut};
 use core::slice::{Iter, IterMut};
-use nohash_hasher::IsEnabled;
 use std::hash::Hash;
 use std::num::NonZeroU32;
 
@@ -30,8 +29,6 @@ impl Key {
         (self.idx, self.ver)
     }
 }
-
-impl IsEnabled for Key {}
 
 impl Hash for Key {
     fn hash<H: std::hash::Hasher>(&self, state: &mut H) {

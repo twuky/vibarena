@@ -1,6 +1,6 @@
 [package]
 name = "vibarena"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 authors = ["twuky <hey@tuckie.zone>"]
 description = "Simple generational arena"
@@ -8,5 +8,9 @@ license = "MIT"
 repository = "https://github.com/twuky/vibarena"
 readme = "readme.md"
 
+[features]
+default = ["nohash"]
+nohash = ["nohash-hasher"]
+
 [dependencies]
-nohash-hasher = "0.2.0"
+nohash-hasher = { version = "0.2.0", optional = true }

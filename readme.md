@@ -10,10 +10,7 @@ Internally this stores values in a tightly packed vec, so retrieving elements an
 
 You can refer to the naive-slotmap in the [generational arena benchmarks](https://github.com/mooman219/generational_arena_bench) for a general idea.
 
-The arena also offers two aliased types:
-
-ArenaMap<T> 
-ArenaSet
+The arena also offers two aliased types: `ArenaMap` and `ArenaSet`. These are included in the `nohash` feature, which is enabled by default.
 
 These wrap Hasmap and HashSet but implement NoHashHasher for the keys, since a key is always a unique u64 representation of the index and generation.
 
