@@ -1,6 +1,6 @@
 [package]
 name = "vibarena"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2024"
 authors = ["twuky <hey@tuckie.zone>"]
 description = "Simple generational arena"
