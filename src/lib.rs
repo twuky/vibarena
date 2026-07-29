@@ -1,6 +1,9 @@
 mod arena;
 
 
+use std::collections::HashMap;
+use std::collections::HashSet;
+
 pub use arena::Arena;
 pub use arena::Key;
 
@@ -31,10 +34,26 @@ pub fn map<T>() -> ArenaMap<T> {
     ArenaMap::<T>::default()
 }
 
+/// Create a new empty `HashMap`.
+/// 
+/// This is a map of unique keys, that does hash internally.
+/// If you don't need hashing for security, use `map()` instead as it is faster.
+pub fn hash_map<T>() -> HashMap<Key, T> {
+    HashMap::new()
+}
+
 /// Create a new empty `KeySet`.
 ///
 /// This is a set of unique keys, that does not need to hash.
 /// This is a wrapper around a non-hashing set.
 pub fn set() -> KeySet {
     KeySet::default()
+}
+
+/// Create a new empty `HashSet`.
+///
+/// This is a set of unique keys, that does hash internally.
+/// If you don't need hashing for security, use `set()` instead as it is faster.
+pub fn hash_set<T>() -> HashSet<Key> {
+    HashSet::new()
 }

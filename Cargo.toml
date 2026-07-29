@@ -2,6 +2,11 @@
 name = "vibarena"
 version = "1.0.0"
 edition = "2024"
+authors = ["twuky <hey@tuckie.zone>"]
+description = "Simple generational arena"
+license = "MIT"
+repository = "https://github.com/twuky/vibarena"
+readme = "readme.md"
 
 [dependencies]
 nohash-hasher = "0.2.0"
